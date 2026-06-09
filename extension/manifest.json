@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Based Learning Phishing Mail",
+  "version": "1.1.0",
+  "description": "Portable extension for phishing mail backend",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://mail.google.com/*"
+  ],
+  "action": {
+    "default_title": "Based Learning",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

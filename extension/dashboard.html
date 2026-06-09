@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Based Learning Dashboard</title>
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --line: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --blue: #2563eb;
+      --green: #16a34a;
+      --yellow: #d97706;
+      --red: #dc2626;
+      --gray: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      padding: 16px 20px;
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-right: auto;
+    }
+
+    input, select, button {
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    input, select {
+      background: #fff;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+    }
+
+    button.secondary {
+      background: #374151;
+    }
+
+    button.secondary:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    button.danger {
+      background: var(--red);
+    }
+
+    .summary {
+      padding: 12px 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 16px;
+      padding: 0 16px 16px;
+      min-height: calc(100vh - 120px);
+    }
+
+    .panel {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      min-height: 600px;
+    }
+
+    .panel-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 700;
+      background: #fafafa;
+    }
+
+    .mail-list {
+      max-height: calc(100vh - 190px);
+      overflow: auto;
+    }
+
+    .mail-item {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .mail-item:hover {
+      background: #f9fafb;
+    }
+
+    .mail-item.active {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding-left: 12px;
+    }
+
+    .mail-subject {
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .mail-meta {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .detail {
+      padding: 16px;
+      overflow: auto;
+      max-height: calc(100vh - 190px);
+    }
+
+    .detail-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .card-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .card-value {
+      font-size: 14px;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .badge.red { background: var(--red); }
+    .badge.yellow { background: var(--yellow); }
+    .badge.green { background: var(--green); }
+    .badge.gray { background: var(--gray); }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      word-break: break-word;
+    }
+
+    pre {
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    .empty {
+      padding: 24px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mail-list,
+      .detail {
+        max-height: none;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="title">Dashboard debug mail scan</div>
+    <input id="searchInput" type="text" placeholder="Tìm theo subject / sender / email..." />
+    <select id="sessionFilter" aria-label="Nguồn dữ liệu">
+      <option value="all">Tất cả nguồn dữ liệu</option>
+    </select>
+    <button id="btnRefresh" class="secondary">Làm mới</button>
+    <button id="btnClearHistory" class="danger">Xóa lịch sử</button>
+  </div>
+
+  <div class="summary" id="summaryText">Đang tải dữ liệu...</div>
+
+  <div class="layout">
+    <div class="panel">
+      <div class="panel-header">Danh sách mail đã scan</div>
+      <div class="mail-list" id="mailList"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">Chi tiết debug</div>
+      <div class="detail" id="detailPane"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

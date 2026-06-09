@@ -1,0 +1,62 @@
+﻿brand,usage,match_type,value,aliases
+google,sender,exact_domain,accounts.google.com,google|gmail
+google,sender,exact_email,no-reply@accounts.google.com,google|gmail
+google,link,domain,google.com,google|gmail
+google,link,domain,accounts.google.com,google|gmail
+google,link,domain,myaccount.google.com,google|gmail|myaccount
+google,link,domain,notifications.google.com,google|gmail|myaccount
+google,link,domain,security.google.com,google|gmail|myaccount
+google,link,domain,googleusercontent.com,google|gmail
+google,sender,domain,google.com,google|gmail|google maps|local guides
+google,link,domain,google.com,google|gmail|google maps|local guides
+google,link,domain,gstatic.com,google|gmail
+gmail,link,domain,gmail.com,gmail|google mail
+microsoft,sender,exact_domain,emailnotify.microsoft.com,microsoft|ms|microsoft rewards
+microsoft,link,domain,microsoft.com,microsoft|ms
+microsoft,link,domain,microsoftonline.com,microsoft|office 365|m365
+microsoft,link,domain,office.com,microsoft|office 365|m365
+microsoft,sender,exact_domain,accountprotection.microsoft.com,microsoft|ms|microsoft account|account security
+microsoft,sender,exact_email,account-security-noreply@accountprotection.microsoft.com,microsoft|ms|microsoft account|account security
+microsoft,link,domain,emailnotify.microsoft.com,microsoft|ms|microsoft rewards
+outlook,link,domain,outlook.com,outlook
+outlook,link,domain,live.com,outlook|hotmail
+facebook,sender,domain,facebookmail.com,facebook|meta
+facebook,link,domain,facebook.com,facebook|meta
+facebook,link,domain,facebookmail.com,facebook|meta
+facebook,link,domain,meta.com,facebook|meta
+facebook,link,domain,fbcdn.net,facebook|meta
+instagram,link,domain,instagram.com,instagram|insta
+instagram,link,domain,fbcdn.net,instagram|insta
+paypal,sender,exact_domain,paypal.com,paypal
+paypal,link,domain,paypal.com,paypal
+paypal,link,domain,paypalobjects.com,paypal
+apple,sender,exact_domain,apple.com,apple|icloud
+apple,link,domain,apple.com,apple|icloud
+apple,link,domain,icloud.com,apple|icloud
+dropbox,sender,exact_domain,dropbox.com,dropbox
+dropbox,link,domain,dropbox.com,dropbox
+docusign,sender,exact_domain,docusign.com,docusign|docu sign
+docusign,link,domain,docusign.com,docusign|docu sign
+adobe,sender,exact_domain,adobe.com,adobe|acrobat
+adobe,link,domain,adobe.com,adobe|acrobat
+onedrive,sender,exact_domain,sharepoint.com,onedrive|sharepoint
+onedrive,link,domain,sharepoint.com,onedrive|sharepoint
+onedrive,link,domain,onedrive.live.com,onedrive|sharepoint
+fpt,sender,exact_domain,fpt.edu.vn,fpt
+fpt,sender,exact_domain,fe.edu.vn,fpt|fe
+fpt,link,domain,fpt.edu.vn,fpt
+fpt,link,domain,fe.edu.vn,fpt|fe
+fpt,link,domain,fap.fpt.edu.vn,fpt|fe|fap
+dvsv,sender,exact_domain,fpt.edu.vn,dvsv|fpt|phòng dịch vụ sinh viên|dịch vụ sinh viên
+dvsv,sender,exact_domain,fe.edu.vn,dvsv|fpt|phòng dịch vụ sinh viên|dịch vụ sinh viên
+dvsv,link,domain,fpt.edu.vn,dvsv|fpt|phòng dịch vụ sinh viên|dịch vụ sinh viên
+dvsv,link,domain,fe.edu.vn,dvsv|fpt|phòng dịch vụ sinh viên|dịch vụ sinh viên
+dvsv,link,domain,fap.fpt.edu.vn,dvsv|fpt|phòng dịch vụ sinh viên|dịch vụ sinh viên|fap
+shopee,sender,exact_domain,mail.shopee.vn,shopee
+shopee,sender,exact_email,info@mail.shopee.vn,shopee
+shopee,link,domain,shopee.vn,shopee
+shopee,link,domain,help.shopee.vn,shopee
+shopee,link,domain,mail.shopee.vn,shopee
+apple,sender,exact_domain,insideapple.apple.com,apple|icloud
+apple,link,exact_domain,c.apple.com,apple|icloud
+apple,link,domain,images.apple.com,apple|icloud

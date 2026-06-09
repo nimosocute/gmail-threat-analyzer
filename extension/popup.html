@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Based Learning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 380px;
+      margin: 0;
+      padding: 14px;
+      background: #f7f8fa;
+      color: #111827;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 12px;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 4px;
+      margin-top: 10px;
+    }
+
+    .value {
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      margin-top: 4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    button {
+      flex: 1;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+    }
+
+    button.secondary {
+      background: #374151;
+    }
+
+    button.danger {
+      background: #dc2626;
+    }
+
+    button.outline {
+      background: #ffffff;
+      color: #111827;
+      border: 1px solid #d1d5db;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 10px;
+      border-radius: 10px;
+      overflow: auto;
+      max-height: 280px;
+      font-size: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .ok { color: #16a34a; font-weight: 700; }
+    .bad { color: #dc2626; font-weight: 700; }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Based Learning</h2>
+
+  <div class="card">
+    <div class="label">Backend URL</div>
+    <div class="value" id="backendUrl">Đang tải...</div>
+
+    <div class="label">Route đọc mail</div>
+    <div class="value" id="apiPath">Đang tải...</div>
+
+    <div class="row">
+      <button id="btnHealth">Kiểm tra backend</button>
+      <button id="btnSaved" class="secondary">Lấy login đã lưu</button>
+    </div>
+
+    <div class="row">
+      <button id="btnDashboard" class="outline">Mở dashboard</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <a href="#" id="openOptions">Mở cài đặt</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Email Gmail</div>
+    <input id="email" type="text" placeholder="example@gmail.com" />
+
+    <div class="label">App Password</div>
+    <input id="appPassword" type="password" placeholder="Nhập app password Gmail" />
+
+    <div class="label">Mailbox Label</div>
+    <input id="mailboxLabel" type="text" value="Hộp thư đến (INBOX)" />
+
+    <div class="label">Số lượng mail</div>
+    <input id="limit" type="number" min="1" max="100" value="10" />
+
+    <div class="label">Ghi nhớ đăng nhập</div>
+    <select id="rememberLogin">
+      <option value="false">Không</option>
+      <option value="true">Có</option>
+    </select>
+
+    <div class="row">
+      <button id="btnFetch">Đọc mail</button>
+      <button id="btnClear" class="danger">Xóa login lưu</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Trạng thái</div>
+    <div class="value" id="status">Chưa kiểm tra</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Kết quả</div>
+    <pre id="result">Chưa có dữ liệu</pre>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

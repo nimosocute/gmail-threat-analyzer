@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+
+# Local runtime data / secrets
+[.]env
+[.]env.*
+![.]env.example
+backend/saved_login.*
+*.sqlite
+*.sqlite3
+*.db
+*.[k]ey
+*.p12
+*.pfx
+
+# Logs
+*.log
+logs/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Chrome extension build artifacts
+*.crx
+*.pem
+extension.zip
+*.zip
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
