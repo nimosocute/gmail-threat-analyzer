@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Gmail Phishing Detector",
+  "name": "Gmail Threat Analyzer",
   "version": "1.1.0",
-  "description": "Chrome extension backed by FastAPI for detecting phishing emails in Gmail",
+  "description": "Chrome extension backed by FastAPI for Gmail phishing risk analysis",
   "permissions": [
     "storage",
     "unlimitedStorage",
@@ -14,7 +14,7 @@
     "https://mail.google.com/*"
   ],
   "action": {
-    "default_title": "Gmail Phishing Detector",
+    "default_title": "Gmail Threat Analyzer",
     "default_popup": "popup.html"
   },
   "background": {
