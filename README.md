@@ -1,10 +1,10 @@
-# Based Learning Phishing Mail
+# Gmail Phishing Detector
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Chrome Extension](https://img.shields.io/badge/Chrome%20Extension-MV3-4285F4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/)
 
-Based Learning Phishing Mail là một dự án phát hiện email phishing gồm backend FastAPI và Chrome Extension Manifest V3. Backend đọc email Gmail qua IMAP, trích xuất nội dung, URL, attachment, header xác thực và chạy rule-based analyzer để trả về điểm rủi ro cùng bằng chứng. Extension giúp quét email, lưu lịch sử phân tích cục bộ và gắn cảnh báo trực tiếp trên Gmail.
+Gmail Phishing Detector là một dự án phát hiện email phishing gồm backend FastAPI và Chrome Extension Manifest V3. Backend đọc email Gmail qua IMAP, trích xuất nội dung, URL, attachment, header xác thực và chạy rule-based analyzer để trả về điểm rủi ro cùng bằng chứng. Extension giúp quét email, lưu lịch sử phân tích cục bộ và gắn cảnh báo trực tiếp trên Gmail.
 
 ## Tính năng chính
 
@@ -41,7 +41,7 @@ flowchart LR
 ## Cấu trúc thư mục
 
 ```text
-based-learning/
+gmail-phishing-detector/
 ├── backend/
 │   ├── api/                  # API routes FastAPI
 │   ├── core/                 # IMAP, parser, analyzer, URL, auth, feed helpers
@@ -154,5 +154,5 @@ git commit -m "Prepare phishing mail scanner project"
 Nếu dùng GitHub CLI:
 
 ```bash
-gh repo create based-learning --public --source=. --remote=origin --push
+gh repo create gmail-phishing-detector --public --source=. --remote=origin --push
 ```

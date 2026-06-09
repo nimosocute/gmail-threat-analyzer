@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Based Learning Phishing Mail",
+  "name": "Gmail Phishing Detector",
   "version": "1.1.0",
-  "description": "Portable extension for phishing mail backend",
+  "description": "Chrome extension backed by FastAPI for detecting phishing emails in Gmail",
   "permissions": [
     "storage",
     "unlimitedStorage",
@@ -14,7 +14,7 @@
     "https://mail.google.com/*"
   ],
   "action": {
-    "default_title": "Based Learning",
+    "default_title": "Gmail Phishing Detector",
     "default_popup": "popup.html"
   },
   "background": {
