@@ -13,7 +13,7 @@ Based Learning Phishing Mail là một dự án phát hiện email phishing gồ
 - Chấm điểm rủi ro, phân loại trạng thái và trả về danh sách rule đã kích hoạt.
 - Chrome Extension có popup scan, options cấu hình backend, dashboard lịch sử và content script gắn badge trên Gmail.
 - Hỗ trợ exact binding bằng Gmail message/thread id để tránh gán nhầm kết quả scan.
-- Lưu login tùy chọn ở máy local bằng database/key bị ignore khỏi Git.
+- Lưu login tùy chọn ở máy local bằng database/key bị ignore khỏi Git; mặc định extension không bật chế độ này.
 
 ## Kiến trúc
 
@@ -138,6 +138,7 @@ curl -X POST http://127.0.0.1:8000/api/scan-imap-batch \
 
 - Không commit Gmail App Password, `.env`, database local hoặc file khóa.
 - Các file `backend/saved_login.db` và `backend/saved_login.key` là runtime local và đã được ignore.
+- Extension mặc định gửi `remember_login: false`; chỉ bật nhớ login khi thật sự cần demo trên máy cá nhân.
 - Nên dùng Gmail App Password riêng cho demo, không dùng mật khẩu tài khoản chính.
 - Repo này phù hợp cho học tập, demo và nghiên cứu rule-based detection. Không dùng như công cụ bảo mật sản xuất khi chưa harden thêm.
 

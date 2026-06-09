@@ -1170,7 +1170,7 @@ async function loadFormLocal() {
     popup_email: "",
     popup_mailboxLabel: "Hộp thư đến (INBOX)",
     popup_limit: "10",
-    popup_rememberLogin: "true"
+    popup_rememberLogin: "false"
   });
 
   emailEl.value = data.popup_email;

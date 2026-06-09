@@ -21,12 +21,28 @@ htmlcov/
 [.]env.*
 ![.]env.example
 backend/saved_login.*
+.local/
+local-data/
+runtime-data/
+chrome-profile/
+browser-profile/
+cookies/
+sessions/
+credentials/
+secrets/
+tokens/
 *.sqlite
 *.sqlite3
 *.db
 *.[k]ey
 *.p12
 *.pfx
+*.har
+*cookie*
+*session*
+*credential*
+*secret*
+*token*
 
 # Logs
 *.log

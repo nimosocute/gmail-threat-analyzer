@@ -15,6 +15,8 @@ This project analyzes email content and can optionally remember Gmail login data
 
 When `remember_login` is enabled, the backend stores credentials in local runtime files under `backend/`. These files are ignored by Git, but they still exist on the developer machine until deleted through the extension or `DELETE /api/saved-login`.
 
+The extension defaults `remember_login` to `false`. Keep it disabled for shared machines, demos and public screenshots.
+
 ## Recommended usage
 
 - Use a dedicated Gmail App Password for testing.
